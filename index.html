@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    >
+
+    <title>My White Angel 🤍</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         LOADING SCREEN
+    ========================== -->
+
+    <div id="loader">
+
+        <div class="loader-content">
+
+            <div class="loader-heart">♡</div>
+
+            <h2>My White Angel</h2>
+
+            <p>Preparing your little world...</p>
+
+            <div class="loader-line">
+                <span></span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         MAIN WEBSITE
+    ========================== -->
+
+    <main id="main-content">
+
+        <!-- 3D WAVE BACKGROUND -->
+
+        <canvas id="waveCanvas"></canvas>
+
+
+        <!-- FLOATING LIGHTS -->
+
+        <div class="ambient-lights">
+
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </div>
+
+
+        <!-- =========================
+             HERO
+        ========================== -->
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <div class="small-label">
+                    A LITTLE WORLD MADE FOR YOU
+                </div>
+
+                <h1>
+                    My
+                    <span>White Angel</span>
+                </h1>
+
+                <p class="hero-description">
+                    In a world full of beautiful moments,
+                    somehow you became my favorite one.
+                </p>
+
+                <button class="enter-btn" id="enterBtn">
+
+                    <span>Enter My World</span>
+
+                    <span class="btn-arrow">↓</span>
+
+                </button>
+
+            </div>
+
+
+            <!-- HERO IMAGE -->
+
+            <div class="hero-image-wrapper">
+
+                <div class="hero-glow"></div>
+
+                <div class="hero-image-card">
+
+                    <img
+                        src="images/01-closeup.jpg"
+                        alt="My White Angel"
+                    >
+
+                    <div class="glass-reflection"></div>
+
+                </div>
+
+            </div>
+
+
+            <div class="scroll-indicator">
+
+                <span>SCROLL TO EXPLORE</span>
+
+                <div class="scroll-line"></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             INTRO
+        ========================== -->
+
+        <section class="intro section">
+
+            <div class="section-number">
+                01
+            </div>
+
+            <div class="intro-text">
+
+                <p class="eyebrow">
+                    SHE
+                </p>
+
+                <h2>
+                    Some people are
+                    <em>beautiful.</em>
+                </h2>
+
+                <h2>
+                    Some people make
+                    <em>moments beautiful.</em>
+                </h2>
+
+                <p class="description">
+                    And then there is you.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             3D PHOTO SECTION
+        ========================== -->
+
+        <section class="photo-world section">
+
+            <div class="section-heading">
+
+                <p class="eyebrow">
+                    MY WORLD
+                </p>
+
+                <h2>
+                    Beautiful from
+                    <span>every angle.</span>
+                </h2>
+
+            </div>
+
+
+            <div class="photo-stage">
+
+                <!-- PHOTO 01 -->
+
+                <div class="floating-photo photo-1">
+
+                    <div class="photo-inner">
+
+                        <img
+                            src="images/02-closeup.jpg"
+                            alt=""
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- PHOTO 02 -->
+
+                <div class="floating-photo photo-2">
+
+                    <div class="photo-inner">
+
+                        <img
+                            src="images/03-fullbody.jpg"
+                            alt=""
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- PHOTO 03 -->
+
+                <div class="floating-photo photo-3">
+
+                    <div class="photo-inner">
+
+                        <img
+                            src="images/05-differentpose.jpg"
+                            alt=""
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- CENTER GLASS -->
+
+                <div class="center-glass">
+
+                    <span>♡</span>
+
+                    <p>
+                        my favorite view
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             MEMORY WAVE
+        ========================== -->
+
+        <section class="memory-section section">
+
+            <div class="memory-header">
+
+                <p class="eyebrow">
+                    MEMORIES
+                </p>
+
+                <h2>
+                    Moments I would
+                    <span>keep forever.</span>
+                </h2>
+
+            </div>
+
+
+            <div class="memory-wave">
+
+                <div class="memory-card card-1">
+
+                    <img
+                        src="images/04-fullbody.jpg"
+                        alt=""
+                    >
+
+                    <span>01</span>
+
+                </div>
+
+
+                <div class="memory-card card-2">
+
+                    <img
+                        src="images/06-differentpose.jpg"
+                        alt=""
+                    >
+
+                    <span>02</span>
+
+                </div>
+
+
+                <div class="memory-card card-3">
+
+                    <img
+                        src="images/07-candid.jpg"
+                        alt=""
+                    >
+
+                    <span>03</span>
+
+                </div>
+
+
+                <div class="memory-card card-4">
+
+                    <img
+                        src="images/08-candid.jpg"
+                        alt=""
+                    >
+
+                    <span>04</span>
+
+                </div>
+
+
+                <div class="memory-card card-5">
+
+                    <img
+                        src="images/09-sideprofile.jpg"
+                        alt=""
+                    >
+
+                    <span>05</span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             GLASS GALLERY
+        ========================== -->
+
+        <section class="gallery-section section">
+
+            <div class="gallery-title">
+
+                <p class="eyebrow">
+                    JUST YOU
+                </p>
+
+                <h2>
+                    Every little
+                    <span>detail.</span>
+                </h2>
+
+            </div>
+
+
+            <div class="glass-gallery">
+
+                <div class="gallery-item item-a">
+
+                    <img
+                        src="images/11-fullbody.jpg"
+                        alt=""
+                    >
+
+                </div>
+
+
+                <div class="gallery-item item-b">
+
+                    <img
+                        src="images/12-closeup.jpg"
+                        alt=""
+                    >
+
+                </div>
+
+
+                <div class="gallery-item item-c">
+
+                    <img
+                        src="images/13-differentpose.jpg"
+                        alt=""
+                    >
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             FINAL
+        ========================== -->
+
+        <section class="final-section section">
+
+            <div class="final-glow"></div>
+
+            <div class="final-image">
+
+                <img
+                    src="images/15-final.jpg"
+                    alt="My White Angel"
+                >
+
+            </div>
+
+
+            <div class="final-content">
+
+                <p class="eyebrow">
+                    AND FINALLY...
+                </p>
+
+                <h2>
+                    Out of all the
+                    beautiful things
+                    in this world...
+                </h2>
+
+                <h3>
+                    somehow,
+                    <span>my favorite is you.</span>
+                </h3>
+
+                <div class="heart">
+                    ♡
+                </div>
+
+                <p class="signature">
+                    — For my White Angel
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- FOOTER -->
+
+        <footer>
+
+            <p>
+                Made with love 🤍
+            </p>
+
+            <span>
+                By your idiot.....
+            </span>
+
+        </footer>
+
+    </main>
+
+
+<!-- =========================================
+     3D PHOTO VIEWER
+========================================= -->
+
+<div class="photo-viewer" id="photoViewer">
+
+    <div class="viewer-backdrop"></div>
+
+    <button class="viewer-close" id="viewerClose">
+        ×
+    </button>
+
+    <button class="viewer-prev" id="viewerPrev">
+        ‹
+    </button>
+
+    <div class="viewer-content">
+
+        <div class="viewer-photo-frame">
+
+            <img
+                id="viewerImage"
+                src=""
+                alt="Memory"
+            >
+
+            <div class="viewer-shine"></div>
+
+        </div>
+
+        <div class="viewer-counter" id="viewerCounter">
+            01 / 13
+        </div>
+
+    </div>
+
+    <button class="viewer-next" id="viewerNext">
+        ›
+    </button>
+
+</div>    
+
+<script src="script.js"></script>
+
+</body>
+</html>
