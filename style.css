@@ -2175,3 +2175,295 @@ footer span {
     }
 
 }
+
+
+/* =========================================
+   MOBILE — NO PHOTO OVERLAP
+========================================= */
+
+@media (max-width: 768px) {
+
+    /* -------------------------
+       PHOTO WORLD
+    ------------------------- */
+
+    .photo-stage {
+        height: 560px;
+
+        width: 100%;
+
+        margin-top: 35px;
+
+        position: relative;
+    }
+
+
+    .floating-photo {
+        width: 155px;
+
+        height: 220px;
+
+        padding: 6px;
+
+        border-radius: 20px;
+    }
+
+
+    /* MAIN / CENTER PHOTO */
+
+    .photo-3 {
+
+        width: 175px;
+
+        height: 245px;
+
+        left: 50%;
+
+        top: 30px;
+
+        transform:
+            translateX(-50%)
+            rotateZ(0deg)
+            translateZ(120px);
+
+        z-index: 3;
+    }
+
+
+    /* LEFT PHOTO */
+
+    .photo-1 {
+
+        left: 4%;
+
+        top: 230px;
+
+        transform:
+            rotateZ(-7deg)
+            rotateY(8deg);
+
+        z-index: 2;
+    }
+
+
+    /* RIGHT PHOTO */
+
+    .photo-2 {
+
+        right: 4%;
+
+        top: 230px;
+
+        transform:
+            rotateZ(7deg)
+            rotateY(-8deg);
+
+        z-index: 2;
+    }
+
+
+    /* CENTER CIRCLE */
+
+    .center-glass {
+
+        width: 115px;
+
+        height: 115px;
+
+        left: 50%;
+
+        top: 390px;
+
+        transform:
+            translateX(-50%);
+
+        z-index: 5;
+    }
+
+
+    .center-glass span {
+
+        font-size: 27px;
+
+    }
+
+
+    .center-glass p {
+
+        font-size: 14px;
+
+        text-align: center;
+
+    }
+
+
+    /* -------------------------
+       MEMORY SECTION
+    ------------------------- */
+
+    .memory-wave {
+
+        height: 620px;
+
+        position: relative;
+
+        margin-top: 35px;
+    }
+
+
+    .memory-card {
+
+        width: 135px;
+
+        height: 190px;
+
+        padding: 5px;
+
+        border-radius: 17px;
+    }
+
+
+    /* TOP LEFT */
+
+    .card-1 {
+
+        left: 4%;
+
+        top: 40px;
+
+        transform:
+            rotateZ(-6deg);
+
+    }
+
+
+    /* TOP RIGHT */
+
+    .card-2 {
+
+        right: 4%;
+
+        left: auto;
+
+        top: 40px;
+
+        transform:
+            rotateZ(6deg);
+
+    }
+
+
+    /* CENTER */
+
+    .card-3 {
+
+        left: 50%;
+
+        top: 215px;
+
+        transform:
+            translateX(-50%)
+            rotateZ(0deg)
+            translateZ(80px);
+
+        z-index: 4;
+    }
+
+
+    /* BOTTOM LEFT */
+
+    .card-4 {
+
+        left: 8%;
+
+        top: 400px;
+
+        right: auto;
+
+        transform:
+            rotateZ(-5deg);
+
+        z-index: 2;
+    }
+
+
+    /* BOTTOM RIGHT */
+
+    .card-5 {
+
+        right: 8%;
+
+        top: 400px;
+
+        transform:
+            rotateZ(5deg);
+
+        z-index: 2;
+    }
+
+
+    /* -------------------------
+       GALLERY
+    ------------------------- */
+
+    .glass-gallery {
+
+        height: 540px;
+
+        position: relative;
+
+    }
+
+
+    .gallery-item {
+
+        width: 155px;
+
+        height: 220px;
+
+        padding: 6px;
+
+        border-radius: 19px;
+
+    }
+
+
+    .item-a {
+
+        left: 3%;
+
+        top: 100px;
+
+        transform:
+            rotateZ(-6deg);
+
+    }
+
+
+    .item-b {
+
+        left: 50%;
+
+        top: 20px;
+
+        transform:
+            translateX(-50%)
+            translateZ(80px);
+
+        z-index: 3;
+
+    }
+
+
+    .item-c {
+
+        right: 3%;
+
+        top: 100px;
+
+        transform:
+            rotateZ(6deg);
+
+    }
+
+}
