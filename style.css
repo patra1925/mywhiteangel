@@ -567,27 +567,39 @@ body {
 
 
 /* =========================================
-   PHOTO STAGE
+   PHOTO STAGE — FIXED RESPONSIVE GRID
+   No absolute positioning / no photo overlap
 ========================================= */
 
 .photo-stage {
-    position: relative;
+    display: grid;
 
-    height: 650px;
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: clamp(18px, 3vw, 40px);
+
+    align-items: start;
 
     max-width: 1100px;
 
     width: 100%;
 
-    margin: -20px auto 0;
+    margin: 35px auto 0;
 
-    perspective: 1500px;
+    padding: 0 10px 40px;
+
+    perspective: none;
 }
 
 .floating-photo {
-    position: absolute;
+    position: relative;
 
-    width: 260px;
+    width: 100%;
+
+    max-width: 260px;
+
+    justify-self: center;
 
     aspect-ratio: .72;
 
@@ -604,8 +616,13 @@ body {
     box-shadow:
         20px 30px 60px rgba(0,0,0,.13);
 
-    transition:
-        transform 1s cubic-bezier(.2,.8,.2,1);
+    transform: none !important;
+
+    margin: 0 !important;
+
+    rotate: none !important;
+
+    z-index: 1;
 }
 
 .photo-inner {
@@ -618,55 +635,46 @@ body {
 }
 
 .floating-photo img {
+    display: block;
+
     width: 100%;
     height: 100%;
 
     object-fit: cover;
 }
 
-.photo-1 {
-    left: 8%;
-    top: 25%;
-
-    transform:
-        rotateY(25deg)
-        rotateZ(-8deg)
-        translateZ(100px);
-}
-
-.photo-2 {
-    right: 8%;
-    top: 18%;
-
-    transform:
-        rotateY(-25deg)
-        rotateZ(8deg)
-        translateZ(150px);
-}
-
+/* All three photos use the same grid rules */
+.photo-1,
+.photo-2,
 .photo-3 {
-    left: 50%;
-    top: 8%;
+    position: relative;
 
-    transform:
-        translateX(-50%)
-        rotateY(0deg)
-        rotateZ(-2deg)
-        translateZ(250px);
+    left: auto;
+    right: auto;
+    top: auto;
+    bottom: auto;
 
-    z-index: 3;
+    transform: none !important;
+
+    z-index: 1;
 }
 
 .center-glass {
-    position: absolute;
+    position: relative;
 
-    left: 50%;
-    top: 55%;
+    left: auto;
+    top: auto;
 
-    transform: translate(-50%,-50%);
+    grid-column: 1 / -1;
+
+    justify-self: center;
 
     width: 170px;
     height: 170px;
+
+    margin-top: 5px;
+
+    transform: none;
 
     border-radius: 50%;
 
@@ -685,7 +693,7 @@ body {
     box-shadow:
         0 30px 80px rgba(0,0,0,.1);
 
-    z-index: 5;
+    z-index: 2;
 }
 
 .center-glass span {
@@ -704,7 +712,8 @@ body {
 
 
 /* =========================================
-   MEMORY
+   MEMORY — FIXED RESPONSIVE GRID
+   Five photos stay inside their grid cells
 ========================================= */
 
 .memory-section {
@@ -720,19 +729,32 @@ body {
 }
 
 .memory-wave {
-    position: relative;
+    display: grid;
 
-    height: 600px;
+    grid-template-columns:
+        repeat(5, minmax(0, 1fr));
 
-    margin-top: 50px;
+    gap: clamp(14px, 2.5vw, 28px);
 
-    perspective: 1200px;
+    align-items: start;
+
+    max-width: 1200px;
+
+    width: 100%;
+
+    height: auto;
+
+    margin: 50px auto 0;
+
+    padding: 0 10px 40px;
+
+    perspective: none;
 }
 
 .memory-card {
-    position: absolute;
+    position: relative;
 
-    width: 220px;
+    width: 100%;
 
     aspect-ratio: .72;
 
@@ -748,9 +770,15 @@ body {
 
     box-shadow:
         0 30px 70px rgba(0,0,0,.12);
+
+    transform: none !important;
+
+    margin: 0 !important;
 }
 
 .memory-card img {
+    display: block;
+
     width: 100%;
     height: 100%;
 
@@ -774,54 +802,28 @@ body {
     text-shadow: 0 2px 8px black;
 }
 
-.card-1 {
-    left: 2%;
-    top: 35%;
-
-    transform:
-        rotateZ(-12deg)
-        rotateY(20deg);
-}
-
-.card-2 {
-    left: 22%;
-    top: 12%;
-
-    transform:
-        rotateZ(6deg)
-        rotateY(10deg);
-}
-
-.card-3 {
-    left: 40%;
-    top: 30%;
-
-    transform:
-        translateZ(100px)
-        rotateZ(-3deg);
-}
-
-.card-4 {
-    right: 20%;
-    top: 10%;
-
-    transform:
-        rotateZ(7deg)
-        rotateY(-10deg);
-}
-
+/* Disable the old absolute wave coordinates */
+.card-1,
+.card-2,
+.card-3,
+.card-4,
 .card-5 {
-    right: 2%;
-    top: 35%;
+    position: relative;
 
-    transform:
-        rotateZ(-8deg)
-        rotateY(-20deg);
+    left: auto;
+    right: auto;
+    top: auto;
+    bottom: auto;
+
+    transform: none !important;
+
+    z-index: 1;
 }
 
 
 /* =========================================
-   GLASS GALLERY
+   GLASS GALLERY — FIXED RESPONSIVE GRID
+   Three photos always occupy separate cells
 ========================================= */
 
 .gallery-section {
@@ -835,25 +837,36 @@ body {
 }
 
 .glass-gallery {
-    height: 550px;
+    display: grid;
 
-    position: relative;
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: clamp(18px, 3vw, 32px);
+
+    align-items: start;
 
     max-width: 1000px;
 
     width: 100%;
 
-    margin: 30px auto 0;
+    height: auto;
 
-    perspective: 1400px;
+    margin: 40px auto 0;
+
+    padding: 0 10px 40px;
+
+    perspective: none;
 }
 
 .gallery-item {
-    position: absolute;
+    position: relative;
 
-    width: 290px;
+    width: 100%;
 
-    height: 380px;
+    height: auto;
+
+    aspect-ratio: 290 / 380;
 
     padding: 8px;
 
@@ -869,9 +882,15 @@ body {
         0 35px 80px rgba(0,0,0,.13);
 
     overflow: hidden;
+
+    transform: none !important;
+
+    margin: 0 !important;
 }
 
 .gallery-item img {
+    display: block;
+
     width: 100%;
     height: 100%;
 
@@ -880,36 +899,21 @@ body {
     border-radius: 18px;
 }
 
-.item-a {
-    left: 5%;
-    top: 15%;
-
-    transform:
-        rotateZ(-9deg)
-        rotateY(15deg);
-}
-
-.item-b {
-    left: 50%;
-    top: 3%;
-
-    transform:
-        translateX(-50%)
-        translateZ(180px);
-    
-    z-index: 3;
-}
-
+/* Disable the old overlapping coordinates */
+.item-a,
+.item-b,
 .item-c {
-    right: 5%;
-    top: 15%;
+    position: relative;
 
-    transform:
-        rotateZ(9deg)
-        rotateY(-15deg);
+    left: auto;
+    right: auto;
+    top: auto;
+    bottom: auto;
+
+    transform: none !important;
+
+    z-index: 1;
 }
-
-
 
 
 /* =========================================
@@ -1469,35 +1473,45 @@ footer span {
     }
 
 
+    /* Fixed responsive photo grid */
     .photo-stage {
-        height: 600px;
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 20px;
+
+        height: auto;
 
         margin-top: 30px;
+
+        padding: 0 0 30px;
     }
 
     .floating-photo {
-        width: 175px;
-    }
+        width: 100%;
 
-    .photo-1 {
-        left: 0;
-        top: 32%;
-    }
+        max-width: none;
 
-    .photo-2 {
-        right: 0;
-        top: 22%;
+        transform: none !important;
+
+        margin: 0 !important;
+
+        rotate: none !important;
     }
 
     .photo-3 {
-        top: 8%;
+        grid-column: 1 / -1;
+
+        width: min(100%, 190px);
     }
 
     .center-glass {
         width: 125px;
         height: 125px;
 
-        top: 57%;
+        margin-top: 0;
+
+        grid-column: 1 / -1;
     }
 
     .center-glass p {
@@ -1505,64 +1519,61 @@ footer span {
     }
 
 
+    /* Five memory photos become a safe 2-column grid */
     .memory-wave {
-        height: 650px;
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 18px;
+
+        height: auto;
+
+        margin-top: 40px;
+
+        padding: 0 0 30px;
     }
 
     .memory-card {
-        width: 150px;
-    }
+        width: 100%;
 
-    .card-1 {
-        left: 0;
-        top: 38%;
-    }
+        transform: none !important;
 
-    .card-2 {
-        left: 20%;
-        top: 12%;
-    }
-
-    .card-3 {
-        left: 50%;
-        top: 32%;
-        transform:
-            translateX(-50%)
-            translateZ(100px);
-    }
-
-    .card-4 {
-        right: 20%;
-        top: 12%;
-    }
-
-    .card-5 {
-        right: 0;
-        top: 38%;
+        margin: 0 !important;
     }
 
 
+    /* Three gallery photos become a safe 2-column grid */
     .glass-gallery {
-        height: 600px;
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 18px;
+
+        height: auto;
+
+        margin-top: 30px;
+
+        padding: 0 0 30px;
     }
 
     .gallery-item {
-        width: 180px;
-        height: 260px;
-    }
+        width: 100%;
 
-    .item-a {
-        left: 0;
-        top: 25%;
+        height: auto;
+
+        aspect-ratio: 180 / 260;
+
+        transform: none !important;
+
+        margin: 0 !important;
     }
 
     .item-b {
-        top: 8%;
-    }
+        grid-column: 1 / -1;
 
-    .item-c {
-        right: 0;
-        top: 25%;
+        width: min(100%, 190px);
+
+        justify-self: center;
     }
 
 
@@ -1577,6 +1588,44 @@ footer span {
 
 
 }
+/* =========================================
+   VERY SMALL PHONES — SINGLE COLUMN
+========================================= */
+
+@media (max-width: 420px) {
+
+    .photo-stage,
+    .memory-wave,
+    .glass-gallery {
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+    }
+
+    .photo-3,
+    .item-b {
+        grid-column: auto;
+        width: 100%;
+        max-width: 220px;
+        justify-self: center;
+    }
+
+    .floating-photo {
+        width: min(100%, 220px);
+    }
+
+    .memory-card {
+        width: min(100%, 220px);
+        justify-self: center;
+    }
+
+    .gallery-item {
+        width: min(100%, 220px);
+        justify-self: center;
+    }
+
+}
+
 
 /* =========================================
    PHASE 2 — SCROLL REVEALS
@@ -2171,160 +2220,6 @@ footer span {
     .viewer-next {
 
         right: 12px;
-
-    }
-
-}
-
-/* =========================================
-   MOBILE PHOTO WORLD — CLEAN NO-OVERLAP
-========================================= */
-
-@media (max-width: 768px) {
-
-    /* The whole photo area */
-    .photo-stage {
-        position: relative;
-
-        width: 100%;
-
-        height: 720px;
-
-        margin: 35px auto 0;
-
-        perspective: none;
-    }
-
-
-    /* ALL PHOTO CARDS */
-    .floating-photo {
-        position: absolute;
-
-        padding: 6px;
-
-        width: 125px;
-
-        height: 175px;
-
-        aspect-ratio: auto;
-
-        border-radius: 18px;
-
-        box-shadow:
-            12px 20px 35px rgba(0,0,0,.12);
-
-        transform-style: preserve-3d;
-    }
-
-
-    /* =====================================
-       MAIN PHOTO
-       ===================================== */
-
-    .photo-3 {
-
-        left: 50%;
-
-        top: 20px;
-
-        width: 165px;
-
-        height: 230px;
-
-        transform:
-            translateX(-50%)
-            rotateZ(-1deg);
-
-        z-index: 3;
-    }
-
-
-    /* =====================================
-       LEFT PHOTO
-       ===================================== */
-
-    .photo-1 {
-
-        left: calc(50% - 140px);
-
-        top: 285px;
-
-        transform:
-            rotateZ(-6deg);
-
-        z-index: 2;
-    }
-
-
-    /* =====================================
-       RIGHT PHOTO
-       ===================================== */
-
-    .photo-2 {
-
-        right: calc(50% - 140px);
-
-        top: 285px;
-
-        transform:
-            rotateZ(6deg);
-
-        z-index: 2;
-    }
-
-
-    /* =====================================
-       IMAGE
-       ===================================== */
-
-    .floating-photo img {
-
-        width: 100%;
-
-        height: 100%;
-
-        object-fit: cover;
-
-        display: block;
-    }
-
-
-    /* =====================================
-       CENTER GLASS BADGE
-       NOW BELOW THE PHOTOS
-       ===================================== */
-
-    .center-glass {
-
-        position: absolute;
-
-        left: 50%;
-
-        top: 510px;
-
-        width: 115px;
-
-        height: 115px;
-
-        transform:
-            translateX(-50%);
-
-        z-index: 5;
-    }
-
-
-    .center-glass p {
-
-        font-size: 13px;
-
-        line-height: 1.1;
-
-    }
-
-
-    .center-glass span {
-
-        font-size: 25px;
 
     }
 
